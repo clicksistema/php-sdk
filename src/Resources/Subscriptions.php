@@ -112,4 +112,13 @@ class Subscriptions
 
         return $this->requestTransport->transport($request);
     }
+    public function cancel(array $subscription): array
+    {
+        $request = (new Request())
+            ->method("POST")
+            ->path("/api/v1/subscriptions")
+            ->body($subscription);
+
+        return $this->requestTransport->transport($request);
+    }
 }
