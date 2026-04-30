@@ -115,7 +115,7 @@ class Subscriptions
     public function cancel(array $subscription): array
     {
         $request = (new Request())
-            ->method("POST")
+            ->method("PUT")
             ->path("/api/v1/subscriptions")
             ->body($subscription);
 
